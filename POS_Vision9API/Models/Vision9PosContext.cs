@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace POS_Vision9API.Models;
 
-public partial class Vision9PosContext : DbContext
+public partial class Vision9PosContext : IdentityDbContext<ApplicationUser>
 {
     public Vision9PosContext()
     {
@@ -14,6 +14,8 @@ public partial class Vision9PosContext : DbContext
         : base(options)
     {
     }
+
+    
 
     public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
 
